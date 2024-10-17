@@ -32,7 +32,8 @@ router.get('/searchOrder', (req, res) => {
 router.get('/searchproduct', (req, res) => {
   connection.execute(
     `SELECT * FROM product
-ORDER BY id LIMIT 5`,
+ORDER BY RAND()
+LIMIT 5`,
     (error, results) => {
       if (error) {
         console.log(error)
